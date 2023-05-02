@@ -30,6 +30,14 @@ pipeline {
                 echo "Synk Security Scanner Scanning..."
                 echo "SUCCESSFUL"
             }
+             post {
+                success {
+                    emailext body: 'Synk Security scanning successful',
+                        subject: 'Security Scan',
+                        to: 's222038631@gmail.com',
+                        attachLog: true
+                }
+            }
         }
         stage('Deploy to Stage') {
             steps {
@@ -40,6 +48,14 @@ pipeline {
             steps {
                 echo "Integration testing..."
                 echo "SUCCESSFUL"
+            }
+            post {
+                success {
+                    emailext body: 'Integration test successful',
+                        subject: 'Integration Test',
+                        to: 's222038631@gmail.com',
+                        attachLog: true
+                }
             }
         }
         stage('Deploy to Production') {
