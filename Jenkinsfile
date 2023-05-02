@@ -12,7 +12,7 @@ pipeline{
 			}
 			post{
 				success{
-					emailext attachLog: true, body: 'Unit test successful', compressLog: true, subject: 'Unit Test', to: 's222038631@gmail.com'
+					emailext body: 'Unit test successful', compressLog: true, subject: 'Unit Test', to: 's222038631@gmail.com'
 				}
 			}
 		}
