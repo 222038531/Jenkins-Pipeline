@@ -12,7 +12,7 @@ pipeline{
 			}
 			post{
 				success{
-					emailext body: 'Unit test sucessfull',
+					mail body: 'Unit test sucessfull',
 						subject: 'Unit Test',
 						to: 's222038631@gmail.com'
 
