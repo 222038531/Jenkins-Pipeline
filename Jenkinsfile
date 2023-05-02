@@ -11,33 +11,41 @@ pipeline {
 				echo "Unit tests"
 			}
 		}
+		post{
+			success{
+				mail to: "s222038631@gmail.com",
+				subject: "Unit Test",
+				body: "Unit test was successful",
+				emailext attachLog: true
+			}
+		}
 		stage('Code Analysis'){
 			steps{
-                echo "Starting Static Code Analysis Plug-in..."
-                echo "SUCCESSFUL"
+                		echo "Starting Static Code Analysis Plug-in..."
+                		echo "SUCCESSFUL"
 			}
 		}
 		stage('Security Scan'){
 			steps{
-                echo "Synk Security Scanner Scanning..."
-                ehco "SUCESSFUL"
+                		echo "Synk Security Scanner Scanning..."
+                		ehco "SUCESSFUL"
 			}
 		}
-        stage{
-            steps{
-                echo "Deploying application to AWS staging server"
+        	stage{
+            		steps{
+                		echo "Deploying application to AWS staging server"
 
-                }
-            }
+                	}
+            	}
 		stage('Integration Test'){
 			steps{
-		        echo "Integration testing..."
-                echo "SUCESSFULL"
+		        	echo "Integration testing..."
+                		echo "SUCESSFULL"
 			}
 		}
 		stage('Deploy to Production'){
 			steps{
-                echo "Deploying application to AWS production server"
+                		echo "Deploying application to AWS production server"
 		}
 	}
 }
