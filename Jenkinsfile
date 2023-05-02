@@ -6,7 +6,7 @@ pipeline{
 				echo"Maven Building Application..."
 			}
 		}
-		stage('Test){
+		stage('Test'){
 			steps{
 				echo "Unit tests"
 			}
