@@ -15,7 +15,7 @@ pipeline{
 					mail to: "s222038631@gmail.com",
 					subject: "Unit Test",
 					body: "Unit test was successful",
-					attachmentsPattern: "$workSPACE/build.log"
+					attachments: "$WORKSPACE/build.log"
 				}
 			}
 		}
