@@ -31,7 +31,7 @@ pipeline {
                 		ehco "SUCESSFUL"
 			}
 		}
-        	stage{
+        	stage('Deploy to Stage'){
             		steps{
                 		echo "Deploying application to AWS staging server"
 
