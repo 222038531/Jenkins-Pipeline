@@ -11,7 +11,7 @@ pipeline{
 				echo "Unit tests"
 			}
 		}
-		post {
+		post{
 			success{
 				mail to: "s222038631@gmail.com",
 				subject: "Unit Test",
