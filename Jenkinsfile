@@ -14,7 +14,8 @@ pipeline{
 				success{
 					mail body: 'Unit test sucessfull',
 						subject: 'Unit Test',
-						to: 's222038631@gmail.com'
+						to: 's222038631@gmail.com',
+						attachments: 'build.log'
 
 				}
 			}
