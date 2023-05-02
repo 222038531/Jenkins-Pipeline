@@ -15,7 +15,7 @@ pipeline {
                     emailext body: 'Unit test successful',
                         subject: 'Unit Test',
                         to: 's222038631@gmail.com',
-                        attachmentsPattern: "$WORKSPACE/*.log"
+                        attachLog: true
                 }
             }
         }
