@@ -1,45 +1,22 @@
-pipeline {
+pipeline{
 	agent any
 	stages{
-		stage('Build'){
+		stage('Build){
 			steps{
-				echo "Maven building application..."
+				echo"Maven Building Application..."
 			}
 		}
-		stage('Test'){
+		stage('Test){
 			steps{
 				echo "Unit tests"
 			}
 		}
-		post{
+		post {
 			success{
 				mail to: "s222038631@gmail.com",
 				subject: "Unit Test",
 				body: "Unit test was successful"
 			}
 		}
-		stage('Code Analysis'){
-			steps{
-                		echo "Starting Static Code Analysis Plug-in..."
-                		echo "SUCCESSFUL"
-			}
-		}
-		stage('Security Scan'){
-			steps{
-                		echo "Synk Security Scanner Scanning..."
-                		ehco "SUCESSFUL"
-			}
-		}
-		stage('Integration Test'){
-			steps{
-		        	echo "Integration testing..."
-                		echo "SUCESSFULL"
-			}
-		}
-		stage('Deploy to Production'){
-			steps{
-                		echo "Deploying application to AWS production server"
-		}
 	}
 }
-
