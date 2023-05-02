@@ -61,6 +61,7 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo "Deploying application to AWS production server"
+                echo "Auto-Update"
             }
         }
     }
